@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "start": "yarn watch",
+    "build": "yarn build",
+    "test": "yarn test --passWithNoTests",
+    "lint-staged": "lint-staged",
+    "prebuild": "yarn build"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "lint-staged": {
+    "*.+(ts|tsx)": [
+      "prettier-tslint fix",
+      "git add",
+      "tslint"
+    ]
+  },
+  "pre-commit": [
+    "lint-staged"
+  ],
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@types/jest": "^24.0.11",
+    "@types/next": "^8.0.3",
+    "@types/node": "^11.11.6",
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.3",
+    "babel-loader": "^8.1.0",
+    "lint-staged": "^7.1.2",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.7.4",
+    "prettier-tslint": "^0.4.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
